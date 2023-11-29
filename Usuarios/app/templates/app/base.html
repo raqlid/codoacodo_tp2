@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <h1>Administración de Usuarios 1.0</h1>
+      <h2>{% block section_title %}{% endblock %}</h2>
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Listado usuarios</a></li>
+          <li><a href="">Crear</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>{% block main %}{% endblock %}</main>
+    <footer>
+      <p>Todos los derechos reservados - Codo a Codo 2023</p>
+    </footer>
+  </body>
+</html>
