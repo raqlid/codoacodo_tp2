@@ -1,0 +1,15 @@
+<!-- users/templates/init_db.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicializar Base de Datos</title>
+</head>
+<body>
+    <h1>Inicializar Base de Datos</h1>
+    <form method="post" action="{% url 'init_db' %}">
+        {% csrf_token %}
+        <input type="submit" value="Inicializar">
+    </form>
+</body>
+</html>
