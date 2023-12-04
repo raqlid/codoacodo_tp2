@@ -1,3 +1,13 @@
+# users/models.py
 from django.db import models
 
-# Create your models here.
+class Usuario(models.Model):
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+    dni = models.CharField(max_length=10, unique=True)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+    fecha_modificacion = models.DateTimeField(auto_now=True)
+    fecha_baja = models.DateTimeField(null=True, blank=True)
+
