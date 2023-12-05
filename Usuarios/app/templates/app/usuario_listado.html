@@ -1,0 +1,38 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} Listado {% endblock %}
+{% block section_title %} Listado Usuarios {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'app/css/tareas_listado.css' %}">
+{% endblock %}
+
+{% block main %}
+    <section>
+        {% for usuario in usuario_listado %}
+            <article>
+                <div>
+                    <p>{{usuario.nombre}}</p>
+                    <p>{{usuario.apellido}}</p>
+                    <p>{{usuario.usuario}}</p>
+                    <p>{{usuario.email}}</p>
+                    <p>{{usuario.dni}}</p>
+                    <p>{{usuario.fecha_baja}}</p>
+                    <p>{{usuario.password}}</p>
+                </div>
+                <div>
+                    <a href="{% url 'usuario_detalle' pk=usuario.id %}">Ver</a>
+                    <a href="{% url 'usuario_modificar' pk=usuario.id %}">Modificar</a>
+                    <a href="{% url 'usuario_borrar' pk=usuario.id %}">Borrar</a>
+                </div>
+            </article>
+
+        {% empty %}
+            <article>
+                No hay usuarios cargados.
+            </article>
+        {% endfor %}
+
+    </section>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} Detalle de Usuario {% endblock %}
+{% block section_title %} Detalle de Usuario {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'app/css/usuario_detalle.css' %}">
+{% endblock %}
+
+{% block main %}
+    <article>
+        <h3>{{object.usuario}}</h3>
+        <p>{{object.nombre}}</p>
+        <p>{{object.apellido}}</p>
+        <p>{{object.email}}</p>
+        <p>{{object.dni}}</p>
+        <p>{{object.fecha_baja}}</p>
+    </article>
+{% endblock %}
