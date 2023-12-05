@@ -1,0 +1,18 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} Modificar Usuario {% endblock %}
+{% block section_title %} Modificar Usuario {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'usuario_borrar.css' %}">
+{% endblock %}
+
+{% block main %}
+    <h3>Datos del usuario</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+{% endblock %}

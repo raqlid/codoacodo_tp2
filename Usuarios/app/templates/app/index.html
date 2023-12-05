@@ -1,10 +1,11 @@
 {% extends "app/base.html" %}
+{% load static %}
 
 {% block title %} Index {% endblock %}
-{% block section_title %} Hola soy {{username}} {% endblock %}
+{% block section_title %} Index {% endblock %}
 
 {% block extra_css %}
-    
+    <link rel="stylesheet" href="{% static 'index.css' %}">
 {% endblock %}
 
 {% block main %}

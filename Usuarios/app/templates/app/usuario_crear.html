@@ -1,0 +1,18 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %} Crear Usuario {% endblock %}
+{% block section_title %} Crear Usuario {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'usuario_crear.css' %}">
+{% endblock %}
+
+{% block main %}
+    <h3>Datos del nuevo Usuario</h3>
+    <form method="post" action="{% url 'usuario_crear'%}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+{% endblock %}

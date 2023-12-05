@@ -11,9 +11,9 @@
       <h2>{% block section_title %}{% endblock %}</h2>
       <nav>
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Listado usuarios</a></li>
-          <li><a href="">Crear</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'usuario_listado' %}">Listado usuarios</a></li>
+          <li><a href="{% url 'usuario_crear' %}">Crear</a></li>
         </ul>
       </nav>
     </header>
