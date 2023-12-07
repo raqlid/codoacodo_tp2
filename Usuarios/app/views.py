@@ -4,13 +4,16 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.urls import reverse, reverse_lazy
 from .models import Usuario
+from datetime import datetime
 # Create your views here.
 
 
 def index(request):
     context = {
         'username': 'Walter',
-        'edad': 29
+        'edad': 29,
+        'anio' : '2023',
+        'fecha_hoy' : datetime.now()
     }
     return render(request, 'app/index.html', context)
 
