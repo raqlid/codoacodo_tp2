@@ -11,9 +11,8 @@ from datetime import datetime
 def index(request):
     context = {
         'username': 'Walter',
-        'edad': 29,
-        'anio' : '2023',
-        'fecha_hoy' : datetime.now()
+        'fecha_hoy' : datetime.now(),
+        'anio' : '2023'
     }
     return render(request, 'app/index.html', context)
 
