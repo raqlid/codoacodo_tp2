@@ -27,16 +27,16 @@
         <li class="nav-item" title="{{username}}"><a class="nav-link disabled" href="#"><img class="rounded-pill"
               src="{% static 'app/img/usuario.png' %}" alt="Avatar Logo" style="width:1.5em;"></a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'usuario_listado' %}">Listado usuarios</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'usuario_crear' %}">Crear</a></li>
+        <li class="nav-item"><a id="nav_link_inicio" class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+        <li class="nav-item"><a id="nav_link_listado" class="nav-link" href="{% url 'usuario_listado' %}">Listado usuarios</a></li>
+        <li class="nav-item"><a id="nav_link_crear" class="nav-link" href="{% url 'usuario_crear' %}">Crear</a></li>
         <li class="nav-item"><a class="nav-link disabled" href="#">| {{fecha_hoy}}</a></li>
       </ul>
     </div>
   </nav>
 
-  <main>
-    <h2>{% block section_title %}{% endblock %}</h2>
+  <main class="m-3">
+    <h2><strong>{% block section_title %}{% endblock %}</strong></h2>
     {% block main %}{% endblock %}
   </main>
 

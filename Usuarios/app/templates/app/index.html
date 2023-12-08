@@ -2,16 +2,57 @@
 {% load static %}
 
 {% block title %} Index {% endblock %}
-{% block section_title %} Index {% endblock %}
+{% block section_title %} Bienvenid@, {{username}} {% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/index.css' %}">
 {% endblock %}
 
 {% block main %}
-    <p class="descripcion">
-        Esta es una aplicación web de pruebas para la gestión de usuarios pendientes.
-        <br>
-        Realizado en el curso de Fullstack Python 2do Cuatrimestre 2023.
-    </p>
+<h3 class="my-3">En el emocionante recorrido del curso <em>"Desarrollo Fullstack con Python"</em> del programa Codo a
+    Codo 2023, nos complace
+    presentarte nuestra Página de Gestión de Usuarios. Esta herramienta integral está diseñada para facilitar la
+    creación, visualización, modificación y eliminación de usuarios de manera eficiente y efectiva.</h3>
+
+
+<section>
+    <h4 class="mt-4"><strong>Funcionalidades Destacadas:</strong></h4>
+    <ol>
+        <li><strong>Creación de Usuarios:</strong> Con nuestra interfaz amigable, podrás agregar nuevos usuarios de
+            forma
+            rápida y sencilla. Personaliza la información y configura los permisos según las necesidades de tu
+            aplicación.
+        </li>
+        <li><strong>Listado Completo:</strong> Visualiza todos los usuarios registrados en un listado ordenado. Obtén una
+            visión global de la comunidad de usuarios de tu aplicación y accede a detalles específicos con un solo clic.
+        </li>
+        <li><strong>Visualización Detallada:</strong> Explora a fondo la información de cada usuario. Desde datos
+            personales
+            hasta detalles de acceso, toda la información relevante se presenta de manera clara y accesible</li>
+        <li><strong>Modificación Ágil:</strong> ¿Necesitas realizar cambios en los datos de un usuario? Nuestra
+            plataforma te
+            permite modificar la información de manera rápida y segura, asegurando una gestión eficiente.</li>
+        <li><strong>Eliminación Segura:</strong> En situaciones donde la eliminación de un usuario es necesaria, nuestro
+            sistema garantiza un proceso seguro y sin complicaciones. ¡Toma decisiones informadas con total confianza!
+        </li>
+    </ol>
+</section>
+
+<section>
+    <h4 class="mt-4"><strong>Funcionalidades Destacadas:</strong></h4>
+    <ul>
+        <li><strong>Seguridad:</strong> La plataforma cuenta con medidas robustas de seguridad para proteger la
+            información sensible de los usuarios.</li>
+        <li><strong>Experiencia Intuitiva:</strong> Diseñada pensando en la usabilidad, nuestra interfaz asegura una
+            experiencia intuitiva para usuarios de todos los niveles de habilidad.</li>
+        <li><strong>Escalabilidad:</strong> Preparada para crecer contigo, la Plataforma de Gestión de Usuarios se adapta
+            a tus necesidades, ya sea que gestiones un pequeño grupo de usuarios o una comunidad en expansión.</li>
+    </ul>
+</section>
+
+<aside class="my-5 display-6 mx-auto p-3 rounded-4" style="width: 85vw;background-color: antiquewhite;">
+    <p>¡Explora todas estas funciones y más en nuestra Página de Gestión de Usuarios y lleva tu experiencia de desarrollo
+    Fullstack al siguiente nivel!</p>
+    <p class="text-success">¡Bienvenido a la revolución de la gestión de usuarios con Python!</p>
+</aside>
 {% endblock %}

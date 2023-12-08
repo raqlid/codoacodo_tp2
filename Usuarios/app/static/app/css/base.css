@@ -3,12 +3,18 @@
     padding: 0;
 }
 
+nav{
+    opacity: 0.9;
+}
+
 .nav-link{
     text-align: center;
+    font-size: 1.5em;
 }
 
 main, header, footer{
     padding: 20px;
+    font-size: 16pt;
 }
 
 body{
@@ -16,6 +22,7 @@ body{
     flex-direction: column;
     min-height: 100vh;
     font-family: "Open Sans", serif;
+    text-indent: 10px;
 }
 
 main{
