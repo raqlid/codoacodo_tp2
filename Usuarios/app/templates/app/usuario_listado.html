@@ -5,34 +5,53 @@
 {% block section_title %} Listado Usuarios {% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'app/css/usuario_listado.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/usuario_listado.css' %}">
 {% endblock %}
 
 {% block main %}
-    <section>
-        {% for usuario in usuario_listado %}
-            <article>
-                <div>
-                    <p>{{usuario.nombre}}</p>
-                    <p>{{usuario.apellido}}</p>
-                    <p>{{usuario.usuario}}</p>
-                    <p>{{usuario.email}}</p>
-                    <p>{{usuario.dni}}</p>
-                    <p>{{usuario.fecha_baja}}</p>
-                    <p>{{usuario.password}}</p>
-                </div>
-                <div>
-                    <a href="{% url 'usuario_detalle' pk=usuario.id %}">Ver</a>
-                    <a href="{% url 'usuario_modificar' pk=usuario.id %}">Modificar</a>
-                    <a href="{% url 'usuario_borrar' pk=usuario.id %}">Borrar</a>
-                </div>
-            </article>
+<div class="toast show mt-3">
+    <div class="toast-header float-end">
+        Ayuda
+        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+    </div>
+    <div class="toast-body">
+        En esta página se muestran los datos de todos los usuarios registrados. Para ver uno en particular, modificarlo
+        o eliminarlo utilice los botones que se encuentran en la parte inferior de cada recuadro.
+    </div>
+</div>
 
-        {% empty %}
-            <article>
-                No hay usuarios cargados.
-            </article>
-        {% endfor %}
+<section class="row mx-auto">
+    {% for usuario in usuario_listado %}
+    <article class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-3">
+        <div class="container mt-3">
+            <div class="card">
+                <div class="card-body mx-auto">
+                    <h4 class="card-title"><strong>{{usuario.nombre}} {{usuario.apellido}}</strong></h4>
+                    <p class="card-text">Username: <strong>{{usuario.usuario}}</strong></p>
+                    <p class="card-text">Email: <strong>{{usuario.email}}</strong></p>
+                    <p class="card-text">D.N.I.: <strong>{{usuario.dni}}</strong></p>
+                    <p class="card-text">Contraseña: <strong>{{usuario.password}}</strong></p>
+                    <p class="card-text">Fecha de baja: <strong>{{usuario.fecha_baja}}</strong></p>
 
-    </section>
+                    <div class="container-fluid mx-auto">
+                        <a href="{% url 'usuario_detalle' pk=usuario.id %}" class="btn btn-outline-success pe-4 btn-sm"
+                            title="Ver usuario {{usuario.usuario}}">Ver</a>
+                        <a href="{% url 'usuario_modificar' pk=usuario.id %}"
+                            class="btn btn-outline-warning pe-4 btn-sm"
+                            title="Modificar usuario {{usuario.usuario}}">Modificar</a>
+                        <a href="{% url 'usuario_borrar' pk=usuario.id %}" class="btn btn-outline-danger pe-4 btn-sm"
+                            title="Borrar usuario {{usuario.usuario}}">Borrar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    {% empty %}
+    <article class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-3">
+        No hay usuarios cargados.
+    </article>
+    {% endfor %}
+
+</section>
 {% endblock %}

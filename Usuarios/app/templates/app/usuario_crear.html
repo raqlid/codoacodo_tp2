@@ -5,14 +5,17 @@
 {% block section_title %} Crear Usuario {% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'app/css/usuario_crear.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/usuario_crear.css' %}">
 {% endblock %}
 
 {% block main %}
-    <h3>Datos del nuevo Usuario</h3>
-    <form method="post" action="{% url 'usuario_crear'%}">
+<h4 class="my-3"><em>Ingresa los datos del nuevo usuario:</em></h4>
+<div class="card container-fluid justify-content-center my-3 mx-auto" style="width: 75vw;">
+    <form class="py-5 mx-auto" method="post" action="{% url 'usuario_crear'%}">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit">
+        <input class="btn btn-success w-25 float-end me-4" type="submit">
     </form>
+</div>
+
 {% endblock %}
