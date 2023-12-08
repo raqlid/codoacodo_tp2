@@ -9,6 +9,5 @@ class Usuario(models.Model):
     dni = models.CharField(max_length=10, unique=True, verbose_name="DNI")
     fecha_creacion = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     fecha_modificacion = models.DateTimeField(auto_now=True, verbose_name="Fecha de modificación")
-    fecha_baja = models.DateTimeField(null=True, blank=True, verbose_name="Fecha de baja")
     password = models.CharField(max_length=50, verbose_name="Contraseña")
 

@@ -14,7 +14,7 @@
     <form class="py-5 mx-auto" method="post" action="{% url 'usuario_crear'%}">
         {% csrf_token %}
         {{ form.as_p }}
-        <input class="btn btn-success w-25 float-end me-4" type="submit">
+        <input class="btn btn-success w-25 float-end me-4" value="Crear" type="submit">
     </form>
 </div>
 
