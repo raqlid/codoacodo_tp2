@@ -11,3 +11,5 @@ class Usuario(models.Model):
     fecha_modificacion = models.DateTimeField(auto_now=True, verbose_name="Fecha de modificación")
     password = models.CharField(max_length=50, verbose_name="Contraseña")
 
+    def __str__(self):
+        return f"{self.usuario}"
