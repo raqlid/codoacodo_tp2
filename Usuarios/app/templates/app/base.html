@@ -25,7 +25,7 @@
   <nav class="navbar navbar-expand-sm bg-success navbar-dark sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'index' %}""><img
-        src="{% static 'app/img/usuario.png' %}" title="{{username}}" alt="Avatar Logo" style="width:1.5em;"></a>
+        src="{% static 'app/img/usuario_75.png' %}" title="{{username}}" alt="Avatar Logo" style="width:1.5em;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -40,7 +40,7 @@
     </div>
   </nav>
 
-  <main class="m-3">
+  <main class="justify-content-center m-3">
     <h2><strong>{% block section_title %}{% endblock %}</strong><small>/ {{fecha_hoy}}</small></h2>
     {% block main %}{% endblock %}
   </main>

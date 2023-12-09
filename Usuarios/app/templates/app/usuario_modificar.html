@@ -1,18 +1,25 @@
 {% extends "app/base.html" %}
 {% load static %}
 
-{% block title %} Modificar Usuario {% endblock %}
-{% block section_title %} Modificar Usuario {% endblock %}
+{% block title %} Modificar usuario {% endblock %}
+{% block section_title %} Modificar usuario {% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'usuario_borrar.css' %}">
+<link rel="stylesheet" href="{% static 'app/css/usuario_modificar.css' %}">
 {% endblock %}
 
 {% block main %}
-    <h3>Datos del usuario</h3>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Update">
-    </form>
+<h4 class="my-3"><em>Confirma tus modificaciones dando click al botón 'Guardar'.</em></h4>
+<div class="card container-fluid justify-content-center my-3" style="width: 80vw;">
+    <div class="card-body mx-auto">
+        <form class="py-5 mx-auto" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-success w-30 float-end me-4" value="Guardar" type="submit">
+            <a href="{% url 'usuario_listado' %}" class="btn btn-outline-danger pe-4 btn-sm"
+                            title="Vuelve al listado de usuarios">Cancelar</a>
+            <input class="btn btn-outline-warning btn-sm" title="Reestablece los datos del usuario" type="reset" value="Reset">
+        </form>
+    </div>
+</div>
 {% endblock %}

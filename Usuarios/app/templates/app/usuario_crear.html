@@ -1,8 +1,8 @@
 {% extends "app/base.html" %}
 {% load static %}
 
-{% block title %} Crear Usuario {% endblock %}
-{% block section_title %} Crear Usuario {% endblock %}
+{% block title %} Crear usuario {% endblock %}
+{% block section_title %} Crear usuario {% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'app/css/usuario_crear.css' %}">
@@ -10,12 +10,15 @@
 
 {% block main %}
 <h4 class="my-3"><em>Ingresa los datos del nuevo usuario:</em></h4>
-<div class="card container-fluid justify-content-center my-3 mx-auto" style="width: 75vw;">
-    <form class="py-5 mx-auto" method="post" action="{% url 'usuario_crear'%}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input class="btn btn-success w-25 float-end me-4" value="Crear" type="submit">
-    </form>
+<div class="card container-fluid justify-content-center my-3" style="width: 80vw;">
+    <div class="card-body mx-auto">
+        <form class="py-5 mx-auto" method="post" action="{% url 'usuario_crear'%}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-success w-25 float-end me-4" value="Crear" type="submit">
+            <a href="{% url 'usuario_listado' %}" class="btn btn-outline-danger pe-4 btn-sm"
+                            title="Lleva al listado de usuarios">Cancelar</a>
+        </form>
+    </div>
 </div>
-
 {% endblock %}

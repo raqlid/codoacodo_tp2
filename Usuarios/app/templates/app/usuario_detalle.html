@@ -1,19 +1,23 @@
 {% extends "app/base.html" %}
 {% load static %}
 
-{% block title %} Detalle de Usuario {% endblock %}
-{% block section_title %} Detalle de Usuario {% endblock %}
+{% block title %} Detalle de usuario {% endblock %}
+{% block section_title %} Detalle de usuario {% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'app/css/usuario_detalle.css' %}">
 {% endblock %}
 
 {% block main %}
-    <article>
-        <h3>{{object.usuario}}</h3>
-        <p>{{object.nombre}}</p>
-        <p>{{object.apellido}}</p>
-        <p>{{object.email}}</p>
-        <p>{{object.dni}}</p>
+    <article class="card my-3 mx-auto">
+        <div class="card-body mx-auto">
+            <h3 class="card-title d-flex justify-content-center mb-3">@<strong>{{object.usuario}}</strong></h3>
+            <p class="card-text">Nombre/s: <strong>{{object.nombre}}</strong></p>
+            <p class="card-text">Apellido/s: <strong>{{object.apellido}}</strong></p>
+            <p class="card-text">Email: <strong>{{object.email}}</strong></p>
+            <p class="card-text">D.N.I.: <strong>{{object.dni}}</strong></p>
+            <a href="{% url 'usuario_listado' %}" class="btn btn-outline-info pe-4 btn-sm"
+                            title="Vuelve al listado de usuarios">Volver</a>
+        </div>
     </article>
 {% endblock %}

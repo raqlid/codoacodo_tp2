@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %} Listado {% endblock %}
-{% block section_title %} Listado Usuarios {% endblock %}
+{% block section_title %} Listado de usuarios {% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'app/css/usuario_listado.css' %}">
@@ -26,11 +26,12 @@
         <div class="container mt-3">
             <div class="card">
                 <div class="card-body mx-auto">
-                    <h4 class="card-title"><strong>{{usuario.nombre}} {{usuario.apellido}}</strong></h4>
-                    <p class="card-text">Username: <strong>{{usuario.usuario}}</strong></p>
+                    <h4 class="card-title"><strong>@{{usuario.usuario}}</strong></h4>
+                    <p class="card-text">Nombre/s: <strong>{{usuario.nombre}}</strong></p>
+                    <p class="card-text">Apellido/s: <strong>{{usuario.apellido}}</strong></p>
                     <p class="card-text">Email: <strong>{{usuario.email}}</strong></p>
                     <p class="card-text">D.N.I.: <strong>{{usuario.dni}}</strong></p>
-                    <p class="card-text">Contraseña: <strong>{{usuario.password}}</strong></p>
+                    <!--<p class="card-text">Contraseña: <strong>{{usuario.password}}</strong></p>-->
 
                     <div class="container-fluid mx-auto">
                         <a href="{% url 'usuario_detalle' pk=usuario.id %}" class="btn btn-outline-success pe-4 btn-sm"
