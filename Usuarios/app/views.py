@@ -5,7 +5,6 @@ from django.views.generic.detail import DetailView
 from django.urls import reverse, reverse_lazy
 from .models import Usuario
 from datetime import datetime
-# Create your views here.
 
 
 def index(request):
@@ -16,9 +15,7 @@ def index(request):
     }
     return render(request, 'app/index.html', context)
 
-#VISTAS BASADAS EN CLASES
 
-#LISTADO
 contexto = {'username': 'Walter',
         'fecha_hoy' : datetime.now(),
         'anio' : '2023'}
@@ -30,7 +27,7 @@ class UsuarioListView(ListView):
     template_name = "app/usuario_listado.html" 
     extra_context = contexto
 
-#CREAR
+
 class UsuarioCreateView(CreateView):
     model = Usuario  
     template_name = "app/usuario_crear.html"  
@@ -38,13 +35,13 @@ class UsuarioCreateView(CreateView):
     fields = "__all__"
     extra_context= contexto
 
-#MOSTRAR USUARIO ESPECIFICO
+
 class UsuarioDetailView(DetailView):
     model = Usuario
     template_name = "app/usuario_detalle.html"
     extra_context= contexto
 
-#MODIFICAR
+
 class UsuarioUpdateView(UpdateView):
     model = Usuario  
     template_name = "app/usuario_modificar.html"  
@@ -55,7 +52,7 @@ class UsuarioUpdateView(UpdateView):
     def get_success_url(self):
         return reverse("usuario_detalle", kwargs={"pk":self.object.pk})
 
-#BORRAR    
+    
 class UsuarioDeleteView(DeleteView):
     model = Usuario  
     template_name = "app/usuario_borrar.html"  
